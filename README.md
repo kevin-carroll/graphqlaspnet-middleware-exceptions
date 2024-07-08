@@ -7,7 +7,7 @@ One way around this short coming is to use a piece of a custom middleware to pro
 
 This Demo: 
 * Demonstrates throwing a custom exception ([PublicMessageException](https://github.com/kevin-carroll/graphqlaspnet-middleware-exceptions/blob/master/middleware-exception-handler/middleware-exception-handler/Model/PublicMessageException.cs)) from a method-based field ([Classroom.Students](https://github.com/kevin-carroll/graphqlaspnet-middleware-exceptions/blob/master/middleware-exception-handler/middleware-exception-handler/Model/Classroom.cs))
-* Implements a piece of middleware [to inspect the field execution context](https://github.com/kevin-carroll/graphqlaspnet-middleware-exceptions/blob/master/middleware-exception-handler/middleware-exception-handler/ExceptionInspectorMiddleware.cs) that executes on every field
+* Implements a piece of middleware [to inspect the field execution context](https://github.com/kevin-carroll/graphqlaspnet-middleware-exceptions/blob/master/middleware-exception-handler/middleware-exception-handler/ExceptionInspectorMiddleware.cs) that executes as the last action for every field
 * This middleware inspects captured messages for the thrown exception
 * When found, the exception is mapped to the friendly message property. The `Message` property is always returned to the user as a standard error. It is intended to be public, caller facing content.
 * The exception is removed from the message.
